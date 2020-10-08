@@ -24,23 +24,25 @@ class PrivateRoute extends React.Component {
     return (
       <Route
         {...rest}
-        render={props =>
+        render={props => // props will be the 'rest' key-value pairs
           (isAuthenticated ? (
             <Component {...props} />
-          ) : (
-              <Redirect
-                to={{
-                  pathname: '/welcome',
-                  state: { from: props.location },
-                }}
-              />
+          ) : (<Redirect
+            to={{
+              pathname: '/welcome',
+              state: { from: props.location },
+            }}
+          />
             ))
         }
       />
     );
   }
 }
-
+// Your mapStateToProps function should return a plain object that contains
+// the data the component needs:
+// Each field in the object will become a prop for your actual component
+// The values in the fields will be used to determine if your component needs to re-render
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
@@ -53,6 +55,6 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-//since private route is not a route component, we use withRouter()
-//in order for it to get access to this.props.history
+// since private route is not enclosed by route component, we use withRouter()
+// in order for it to get access to this.props.history
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PrivateRoute));
