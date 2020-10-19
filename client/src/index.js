@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import 'typeface-roboto/index.css';
 import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store';
 import './index.css';
 
@@ -22,12 +21,10 @@ const render = (Component) => {
 
 render(App);
 
-// Hot Module Replacement (or HMR) is one of the most useful features offered by webpack
+// Hot Module Replacement (or HMR)
 // It allows all kinds of modules to be updated at runtime without the need for a full refresh
 if (module.hot) {
   module.hot.accept('./components/App', () => {
     render(App);
   });
 }
-
-registerServiceWorker();

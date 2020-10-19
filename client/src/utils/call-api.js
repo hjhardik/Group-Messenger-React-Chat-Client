@@ -12,16 +12,16 @@ export default function callApi(endpoint, token, options, payload) {
       Authorization: `Bearer ${token}`,
     }
     : {};
-
+  //returns the fetch response of the API call     
   return fetch(`${config.API_URI}/${endpoint}`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      ...authHeaders,
+      ...authHeaders, //if token is present, it will have authorization otherwise not
     },
     body: JSON.stringify(payload),
-    ...options,
+    ...options, //send the 'options'(parameter) object data with the API call
   })
     .then(response => response.json())
     .then((json) => {
