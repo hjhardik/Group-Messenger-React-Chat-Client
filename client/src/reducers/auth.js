@@ -1,5 +1,5 @@
 import * as types from '../constants';
-
+//get the token from browser local storage
 const token = localStorage.getItem('token');
 
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
   user: null,
   token,
 };
-
+// auth reducer is the reducer which changes authentication state
 export default function auth(state = initialState, action) {
   switch (action.type) {
     case types.SIGNUP_SUCCESS:

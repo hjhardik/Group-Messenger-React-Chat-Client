@@ -9,6 +9,6 @@ export default function titleInitials(title) {
   } catch (e) {
     // eslint-disable-next-line
     console.error(e);
-    return '🐶';
+    return 'error';
   }
 }
