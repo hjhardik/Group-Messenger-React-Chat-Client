@@ -1,6 +1,6 @@
 import * as types from '../constants/users';
 import callApi from '../utils/call-api';
-
+//link for the handling async actions: https://redux.js.org/advanced/async-actions
 // eslint-disable-next-line
 export function editUser({ username, firstName, lastName }) {
   return (dispatch, getState) => {
@@ -16,6 +16,7 @@ export function editUser({ username, firstName, lastName }) {
       type: types.EDIT_USER_REQUEST,
     });
 
+    //call the api endpoint to edit the user details
     return callApi(
       '/users/me',
       token,
