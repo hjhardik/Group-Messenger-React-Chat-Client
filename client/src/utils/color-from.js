@@ -30,6 +30,7 @@ const colors = [
 
 export default function colorFrom(string) {
   try {
+    // index is the sum of unicdoe values of string letters
     const index = string
       .toString()
       .split('')
@@ -41,11 +42,13 @@ export default function colorFrom(string) {
     // each element to an accumulator(sum) and returning it
     // The 0 at the end initializes accumulator to start at 0
     const colorIndex = index % colors.length;
-
+    // will select the index from colors array
     return colors[colorIndex][500];
+    // 500 is the colour shade value
   } catch (e) {
     // eslint-disable-next-line
     console.error(e);
     return blueGrey[500];
+    // default color value
   }
 }

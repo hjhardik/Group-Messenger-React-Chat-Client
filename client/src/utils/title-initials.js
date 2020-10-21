@@ -6,6 +6,7 @@ export default function titleInitials(title) {
       .map(char => char.toUpperCase())
       .slice(0, 2)
       .join('');
+  // "hardik joshi" becomes "HJ"
   } catch (e) {
     // eslint-disable-next-line
     console.error(e);
