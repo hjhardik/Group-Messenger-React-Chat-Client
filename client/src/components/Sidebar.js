@@ -27,9 +27,9 @@ class Sidebar extends React.Component {
   static propTypes = {
     classes: PropTypes.objectOf(PropTypes.string).isRequired,
     chats: PropTypes.shape({
-      active: PropTypes.object,
-      my: PropTypes.array.isRequired,
-      all: PropTypes.array.isRequired,
+      active: PropTypes.instanceOf(Object),
+      my: PropTypes.instanceOf(Array).isRequired,
+      all: PropTypes.instanceOf(Array).isRequired,
     }).isRequired,
     createChat: PropTypes.func.isRequired,
     isConnected: PropTypes.bool.isRequired,
@@ -39,19 +39,20 @@ class Sidebar extends React.Component {
     searchValue: '',
     activeTab: 0,
   };
-
+  // handles the search bar
   handleSearchChange = (event) => {
     this.setState({
       searchValue: event.target.value,
     });
   };
-
+  // handles which chat tab to display
   handleTabChange = (event, value) => {
     this.setState({
       activeTab: value,
     });
   };
 
+  // returns the matching search query chats
   filterChats = (chats) => {
     const { searchValue } = this.state;
 

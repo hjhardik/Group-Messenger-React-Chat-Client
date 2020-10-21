@@ -8,7 +8,7 @@ import ErrorMessage from './ErrorMessage';
 class ChatPage extends React.Component {
   static propTypes = {
     match: PropTypes.shape({
-      params: PropTypes.object.isRequired,
+      params: PropTypes.instanceOf(Object).isRequired,
     }).isRequired,
     fetchAllChats: PropTypes.func.isRequired,
     fetchMyChats: PropTypes.func.isRequired,
@@ -18,9 +18,9 @@ class ChatPage extends React.Component {
     unmountChat: PropTypes.func.isRequired,
     logout: PropTypes.func.isRequired,
     chats: PropTypes.shape({
-      active: PropTypes.object,
-      my: PropTypes.array.isRequired,
-      all: PropTypes.array.isRequired,
+      active: PropTypes.instanceOf(Object),
+      my: PropTypes.instanceOf(Array).isRequired,
+      all: PropTypes.instanceOf(Array).isRequired,
     }).isRequired,
     activeUser: PropTypes.shape({
       firstName: PropTypes.string,
@@ -38,7 +38,7 @@ class ChatPage extends React.Component {
     messages: PropTypes.arrayOf(PropTypes.shape({
       chatId: PropTypes.string.isRequired,
       content: PropTypes.string.isRequired,
-      sender: PropTypes.object.isRequired,
+      sender: PropTypes.instanceOf(Object).isRequired,
       createdAt: PropTypes.string.isRequired,
     })).isRequired,
     editUser: PropTypes.func.isRequired,

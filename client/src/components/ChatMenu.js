@@ -27,12 +27,13 @@ class ChatMenu extends React.Component {
   handleClose = () => {
     this.setState({ anchorEl: null });
   };
-
+  // if user leaves a group
   handleLeaveClick = () => {
     this.handleClose();
     this.props.onLeaveClick();
   };
 
+  // if the user(if =creator) deletes the group
   handleDeleteClick = () => {
     this.handleClose();
     this.props.onDeleteClick();
@@ -70,5 +71,6 @@ class ChatMenu extends React.Component {
     );
   }
 }
-
+// if the user is creator, option for deleting the whole group
+// otherwise if member, option for leaving the group
 export default ChatMenu;

@@ -44,7 +44,7 @@ class WelcomePage extends React.Component {
   componentDidMount() {
     this.props.recieveAuth();
   }
-
+  // login or signup tab
   handleTabChage = (event, value) => {
     this.setState({ activeTab: value });
   };
@@ -55,7 +55,7 @@ class WelcomePage extends React.Component {
     } = this.props;
 
     const { activeTab } = this.state;
-
+    // if req is already authenticated then redirects to chat
     if (isAuthenticated) {
       return <Redirect to="/chat" />;
     }
@@ -65,7 +65,7 @@ class WelcomePage extends React.Component {
         <AppBar>
           <Toolbar>
             <Typography variant="title" color="inherit" style={{ flex: 1 }}>
-              DogeCodes React Chat
+              Group Messenger
             </Typography>
           </Toolbar>
         </AppBar>
