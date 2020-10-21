@@ -46,7 +46,7 @@ class NewChatButton extends React.Component {
   toggleModal = () => {
     this.setState({ open: !this.state.open });
   };
-
+  // handle title input bar change
   handleTitleChange = (event) => {
     this.setState({
       title: {
@@ -55,7 +55,7 @@ class NewChatButton extends React.Component {
       },
     });
   };
-
+  // handles the create new chat functionality
   handleCreateClick = (event) => {
     event.preventDefault();
 

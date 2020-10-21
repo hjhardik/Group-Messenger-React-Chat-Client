@@ -15,7 +15,7 @@ const styles = () => ({
     textAlign: 'center',
   },
 });
-
+// if there are no my chats, then displays "there are no chats yet ..."
 const ChatList = ({
   classes, chats, activeChat, disabled,
 }) => (
@@ -32,7 +32,7 @@ const ChatList = ({
       ))
     ) : (
       <Typography variant="subheading" className={classes.noChats}>
-        There is no chats yet...
+        There are no chats yet...
       </Typography>
     )}
   </List>

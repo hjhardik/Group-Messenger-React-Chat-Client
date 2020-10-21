@@ -26,11 +26,11 @@ class ChatMessageList extends React.Component {
     messages: PropTypes.arrayOf(PropTypes.shape({
       chatId: PropTypes.string.isRequired,
       content: PropTypes.string.isRequired,
-      sender: PropTypes.object.isRequired,
+      sender: PropTypes.instanceOf(Object).isRequired,
       createdAt: PropTypes.string.isRequired,
     })),
     match: PropTypes.shape({
-      params: PropTypes.object.isRequired,
+      params: PropTypes.instanceOf(Object).isRequired,
     }).isRequired,
     activeUser: PropTypes.shape({
       firstName: PropTypes.string,
@@ -45,18 +45,24 @@ class ChatMessageList extends React.Component {
   static defaultProps = {
     messages: [],
   };
-
+  // scroll to the bottom when the chat is accessed
   componentDidMount() {
     this.scrollDownHistory();
   }
-
+  // scroll to the bottom whenever new message appears
   componentDidUpdate() {
     this.scrollDownHistory();
   }
-
+  // Element.scrollTop value is the
+  // length which need to be scrolled to reach the top of the element
+  // When an element's content does not generate a vertical scrollbar,
+  // then its scrollTop value is 0.
+  // Element.scrollHeight read-only property is a measurement of the height
+  // of an element's content, including content not visible on the screen due to overflow.
   scrollDownHistory() {
     if (this.messagesWrapper) {
       this.messagesWrapper.scrollTop = this.messagesWrapper.scrollHeight;
+      // scrolls to the bottom
     }
   }
 
@@ -70,7 +76,7 @@ class ChatMessageList extends React.Component {
       return (
         <Paper className={classes.paper}>
           <Typography variant="display1" gutterBottom>
-            Start messaging…
+            Start messaging …
           </Typography>
           <Typography variant="body1" gutterBottom>
             Use <strong>Global</strong> to explore communities around here.
@@ -82,6 +88,8 @@ class ChatMessageList extends React.Component {
       );
     }
 
+    // if messages are present, display all the msgs otherwise display there
+    // There are no messages yet...
     return messages && messages.length ? (
       <div
         className={classes.messagesWrapper}
@@ -94,7 +102,7 @@ class ChatMessageList extends React.Component {
         ))}
       </div>
     ) : (
-      <Typography variant="display1">There is no messages yet...</Typography>
+      <Typography variant="display1">There are no messages yet ...</Typography>
     );
   }
 }

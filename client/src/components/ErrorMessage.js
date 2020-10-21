@@ -22,7 +22,7 @@ class ErrorMessage extends React.Component {
       this.setState({ open: true });
     }
   }
-
+  // will close the error when iconbar is clicked
   handleCloseSnackbar = () => {
     this.setState({ open: false });
   };
@@ -33,7 +33,7 @@ class ErrorMessage extends React.Component {
     if (!error) {
       return null;
     }
-
+    // display error at bottom left
     return (
       <Snackbar
         anchorOrigin={{

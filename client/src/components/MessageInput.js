@@ -31,19 +31,19 @@ class MessageInput extends React.Component {
   state = {
     value: '',
   };
-
+  // handles typing in msg input box
   handleValueChange = (event) => {
     this.setState({
       value: event.target.value,
     });
   };
-
+  // handle enter in msg input box
   handleKeyPress = (event) => {
     const { value } = this.state;
 
     if (event.key === 'Enter' && value) {
-      this.props.sendMessage(value);
-      this.setState({ value: '' });
+      this.props.sendMessage(value); // sends the message
+      this.setState({ value: '' }); // again makes the msg input box empty
     }
   };
 
@@ -51,7 +51,7 @@ class MessageInput extends React.Component {
     const {
       classes, showJoinButton, onJoinButtonClick, disabled,
     } = this.props;
-
+    // if chat is not joined, shows join button otherwise shows msg input box
     return (
       <div className={classes.messageInputWrapper}>
         <Paper className={classes.messageInput} elevation={6}>

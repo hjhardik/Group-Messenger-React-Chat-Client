@@ -9,9 +9,10 @@ import Avatar from './Avatar';
 const styles = theme => ({
   activeItem: {
     backgroundColor: theme.palette.grey[200],
+    // makes the active chat color in the list to grey[200]
   },
 });
-
+// shows the list of chats along with creation times from now
 const ChatListItem = ({
   classes, disabled, title, chatId, active, createdAt,
 }) => (

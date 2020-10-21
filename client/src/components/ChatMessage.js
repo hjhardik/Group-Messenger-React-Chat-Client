@@ -69,6 +69,11 @@ const ChatMessage = ({
 
   const userAvatar = <Avatar colorFrom={sender._id}>{displayedName}</Avatar>;
 
+  //  ------------------
+  // |NAME OF SENDER    |
+  // |MESSAGE           |
+  // |TIME OF MESSAGE   |
+  //  ------------------
   return (
     // eslint-disable-next-line
     <div

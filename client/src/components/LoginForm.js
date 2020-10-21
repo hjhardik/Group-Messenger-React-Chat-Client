@@ -26,7 +26,8 @@ class LoginForm extends React.Component {
       isValid: true,
     },
   };
-
+  // Without event.persist(),
+  // React will make the first event value as null when second event is fired.
   handleInputChange = (event) => {
     event.persist();
     const { name, value } = event.target;
