@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
+import moment from 'moment'; // date and time
 import { withStyles } from 'material-ui';
 import { Link } from 'react-router-dom';
 import { ListItem, ListItemText } from 'material-ui/List';

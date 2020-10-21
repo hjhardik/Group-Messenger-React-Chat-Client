@@ -1,5 +1,5 @@
 import * as types from '../constants';
-//get the token from browser local storage
+// get the token from browser local storage
 const token = localStorage.getItem('token');
 
 const initialState = {

@@ -35,8 +35,9 @@ export default function colorFrom(string) {
       .split('')
       .map(char => char.charCodeAt())
       .reduce((sum, num) => sum + num, 0);
-    //The charCodeAt() method returns the Unicode of the character at the specified index in a string.
-    //.reduce will loop through an array adding
+    // The charCodeAt() method returns the Unicode of the character
+    // at the specified index in a string.
+    // reduce will loop through an array adding
     // each element to an accumulator(sum) and returning it
     // The 0 at the end initializes accumulator to start at 0
     const colorIndex = index % colors.length;
