@@ -2,7 +2,7 @@
   "name": "group-messenger",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://dogecodes.github.io/react-chat",
+  "homepage": "http://hjhardik.github.io/Group-Messenger",
   "dependencies": {
     "classnames": "^2.2.6",
     "history": "^4.10.1",
