@@ -13,7 +13,7 @@ export default function callApi(endpoint, token, options, payload) {
     }
     : {};
   // returns the fetch response of the API call
-  return fetch(`${config.API_URI}/${endpoint}`, {
+  return fetch(`${config.API_URI}${endpoint}`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
