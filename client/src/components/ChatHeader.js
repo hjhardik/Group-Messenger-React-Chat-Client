@@ -50,7 +50,7 @@ const ChatHeader = ({
         </React.Fragment>
       ) : (
         <Typography variant="title" className={classes.appBarTitle}>
-          DogeCodes React Chat
+          Group Messenger
         </Typography>
       )}
       <UserMenu
