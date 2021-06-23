@@ -2,7 +2,6 @@
   "name": "group-messenger",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hjhardik.github.io/react-chat",
   "dependencies": {
     "classnames": "^2.2.6",
     "history": "^4.10.1",
